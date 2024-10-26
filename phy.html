@@ -42,6 +42,14 @@
             color: #ff79c6; /* Neon pink */
             transform: scale(1.1);
         }
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background: rgba(0, 0, 0, 0.7);
+            margin-bottom: 20px;
+            border-radius: 8px;
+            animation: fadeIn 1s ease; /* Fade-in effect */
+        }
         section {
             padding: 20px;
             margin: 20px;
@@ -94,6 +102,33 @@
             background: rgba(0, 191, 255, 0.2); /* Light blue on hover */
             transform: scale(1.05); /* Scale effect on hover */
         }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .social-links a {
+            margin: 0 10px;
+            color: #00bfff;
+            text-decoration: none;
+            font-size: 24px; /* Larger icons */
+        }
+        .resume-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #00bfff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .resume-btn:hover {
+            background: #0099cc; /* Darker blue on hover */
+        }
         /* Additional styles for mobile responsiveness */
         @media (max-width: 600px) {
             nav {
@@ -117,14 +152,20 @@
 
 <header>
     <h1>Lokesh Sanjay</h1>
-    <p>B.Tech in Computer Science | Robotics and Technology Enthusiast</p>
+    <p>B.Tech in Computer Science |  Technology Enthusiast</p>
     <nav>
         <a href="#about">About Me</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
+        <a href="#technologies">Technologies</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
+
+<div class="hero">
+    <h2>Welcome to My Portfolio</h2>
+    <p>Exploring the intersection of technology and innovation through robotics.</p>
+</div>
 
 <section id="about">
     <h2>About Me</h2>
@@ -142,15 +183,34 @@
 <section id="skills">
     <h2>Skills</h2>
     <ul>
-        <li><strong>Programming Languages:</strong> Python, HTML, Java</li>
-        <li><strong>Technologies:</strong> Ruby, Swift</li>
+        <li><strong>Programming Languages:</strong> Python, HTML</li>
+        
         <li><strong>Tools:</strong> Familiar with ChatGPT, Copilot, Blackbox, Gemini AI</li>
     </ul>
 </section>
 
+<section id="technologies">
+    <h2>Technologies Used</h2>
+    <ul>
+        <li>Artificial Intelligence</li>
+        <li>Machine Learning</li>
+        <li>Web Development</li>
+        <li>cyber security</li>
+        <li>Data Analysis</li> currently achieving
+    </ul>
+</section>
+
+
+
 <section id="contact">
     <h2>Contact</h2>
     <p>If you'd like to get in touch, feel free to reach out to me via email at: <a href="mailto:loki2215297082@gmail.com" style="color: #00bfff;">loki2215297082@gmail.com</a></p>
+    <div class="social-links">
+        <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+        <a href="https://github.com/yourprofile" target="_blank">GitHub</a>
+        <!-- Add more social links as needed -->
+    </div>
+    <a class="resume-btn" href="path_to_your_resume.pdf" download>Download Resume</a>
 </section>
 
 <footer>
