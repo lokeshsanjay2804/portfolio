@@ -7,68 +7,109 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #1a1a1a;
-            color: #00ff00;
-            background-image:  url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fGRpZ2l0YWwlMjBjb2RlJTIwc3RyZWFtJTIwYmFja3Byb3V0fGVufDB8fHx8MTY4NzQ1MTE0Nw&ixlib=rb-4.0.3&q=80&w=1080'); /* Hacker-themed background image */
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
+            background-color: #121212; /* Dark background */
+            color: #e0e0e0; /* Light text */
+            background-image: linear-gradient(135deg, #1a1a1a, #282828);
+            scroll-behavior: smooth; /* Smooth scrolling */
         }
         header {
-            background: rgba(13, 13, 13, 0.8);
-            color: #00ff00;
+            background: rgba(30, 30, 30, 0.9);
+            color: #00bfff; /* Neon blue */
             padding: 20px 0;
             text-align: center;
-            border-bottom: 2px solid #00ff00;
+            border-bottom: 2px solid #00bfff;
+            box-shadow: 0 2px 10px rgba(0, 191, 255, 0.5);
+            animation: fadeIn 1s ease; /* Header fade-in animation */
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         nav {
             margin: 10px 0;
         }
         nav a {
             margin: 0 15px;
-            color: #00ff00;
+            color: #00bfff;
             text-decoration: none;
             font-weight: bold;
-            transition: color 0.3s;
+            transition: color 0.3s, transform 0.3s;
         }
         nav a:hover {
-            color: #009900;
+            color: #ff79c6; /* Neon pink */
+            transform: scale(1.1);
         }
         section {
             padding: 20px;
             margin: 20px;
-            background: rgba(45, 45, 45, 0.9);
+            background: rgba(50, 50, 50, 0.8);
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 255, 0, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 191, 255, 0.2);
+            opacity: 0; /* Start invisible */
+            transform: translateY(20px); /* Start slightly below */
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Animation effect */
+        }
+        section.visible {
+            opacity: 1; /* Fade in */
+            transform: translateY(0); /* Move to original position */
         }
         h2 {
-            color: #00ff00;
-            border-bottom: 1px solid #00ff00;
+            color: #00bfff;
+            border-bottom: 1px solid #00bfff;
             padding-bottom: 10px;
+            text-shadow: 1px 1px 3px #000;
+            animation: fadeIn 1s ease; /* Section header fade-in */
+            transition: transform 0.3s ease; /* Add transition for bounce effect */
+        }
+        h2:hover {
+            transform: translateY(-5px) scale(1.05); /* Bounce effect on hover */
         }
         footer {
             text-align: center;
             padding: 20px 0;
-            background: rgba(13, 13, 13, 0.8);
-            color: #00ff00;
+            background: rgba(30, 30, 30, 0.9);
+            color: #00bfff;
             position: relative;
             bottom: 0;
             width: 100%;
-            border-top: 2px solid #00ff00;
+            border-top: 2px solid #00bfff;
+            box-shadow: 0 -2px 10px rgba(0, 191, 255, 0.5);
         }
         ul {
             list-style-type: none;
             padding: 0;
         }
         ul li {
-            background: #3d3d3d;
-            margin: 5px 0;
-            padding: 10px;
+            background: #333333; /* Darker background for list items */
+            margin: 10px 0;
+            padding: 15px;
             border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 255, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(0, 191, 255, 0.1);
+            transition: background 0.3s, transform 0.3s; /* Transition for hover */
+        }
+        ul li:hover {
+            background: rgba(0, 191, 255, 0.2); /* Light blue on hover */
+            transform: scale(1.05); /* Scale effect on hover */
+        }
+        /* Additional styles for mobile responsiveness */
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav a {
+                margin: 5px 0;
+            }
+            section {
+                margin: 10px;
+                padding: 15px;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
@@ -87,35 +128,55 @@
 
 <section id="about">
     <h2>About Me</h2>
-    <p>Hello! I am Lokesh Sanjay, a B.Tech student in Computer Science at LPU. I have a keen interest in robotics and technology, As an aspiring software engineer, I WAS committed to leveraging technology to solve real-world problems. i actively participates in coding competitions and collaborative projects, honing his problem-solving abilities and enhancing team work skills. With a continuous thirst for knowledge, iam  stays updated with the latest trends in software engineering, ensuring he is well-prepared to tackle the challenges of the tech industry.and I am excited to explore the endless possibilities in these fields.</p>
+    <p>Hello! I am Lokesh Sanjay, a B.Tech student in Computer Science at LPU. I have a keen interest in robotics and technology, As an aspiring software engineer, i was committed to leveraging technology to solve real-world problems. i actively participates in coding competitions and collaborative projects, honing his problem-solving abilities and enhancing team work skills. With a continuous thirst for knowledge, iam  stays updated with the latest trends in software engineering, ensuring he is well-prepared to tackle the challenges of the tech industry.and I am excited to explore the endless possibilities in these fields.</p>
 </section>
 
 <section id="projects">
     <h2>Projects</h2>
     <ul>
-        <li><strong>Project 1:</strong> [
-            I have done a project on "FEDRATION INTERNATIONALDE FOOTBALL ASSOCIATION" in html]</li>
-        
+        <li><strong>Project 1:</strong> Developed a website for the "Fédération Internationale de Football Association" (FIFA) using HTML, showcasing various teams and their achievements.</li>
+        <!-- Add more projects as needed -->
     </ul>
 </section>
 
 <section id="skills">
     <h2>Skills</h2>
     <ul>
-        <li><strong>Programming Languages:</strong> PYTHON , HTML , JAVA</li>
-        <li><strong>Technologies:</strong>"RUBY","SWIFT"  </li>
-        <li><strong>Tools:</strong> [I HAVE A FAMILIAR TOUCH WITH "CHATGPT" , "COPILOT","BLACKBOX","GEMINI AI"]</li>
+        <li><strong>Programming Languages:</strong> Python, HTML, Java</li>
+        <li><strong>Technologies:</strong> Ruby, Swift</li>
+        <li><strong>Tools:</strong> Familiar with ChatGPT, Copilot, Blackbox, Gemini AI</li>
     </ul>
 </section>
 
 <section id="contact">
     <h2>Contact</h2>
-    <p>If you'd like to get in touch, feel free to reach out to me via email at: <a href="mailto:loki2215297082@gmail.com" style="color: #00ff00;">loki2215297082@gmail.com</a></p>
+    <p>If you'd like to get in touch, feel free to reach out to me via email at: <a href="mailto:loki2215297082@gmail.com" style="color: #00bfff;">loki2215297082@gmail.com</a></p>
 </section>
 
 <footer>
     <p>&copy; 2024 Lokesh Sanjay</p>
 </footer>
+
+<script>
+    // Function to handle scroll event and add the 'visible' class to sections
+    const sections = document.querySelectorAll("section");
+    const options = {
+        threshold: 0.1 // Trigger animation when 10% of the section is in view
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target); // Stop observing after it becomes visible
+            }
+        });
+    }, options);
+
+    sections.forEach(section => {
+        observer.observe(section); // Observe each section
+    });
+</script>
 
 </body>
 </html>
